@@ -25,7 +25,7 @@ Users choose accessories/clothes from their wishlist on Myntra. AR technology ad
 ### Step 3
 Users can adjust how accessories look and decide which ones they like. They can add their favorites to the cart directly.
 
-![Demo](images/demo.png)
+![Demo](Gallery-Photos/images/demo.png)
 
 ## Model Checkpoints
 Our model checkpoints are trained on VITON-HD (half-body) and Dress Code (full-body). Checkpoints are available on 🤗 Hugging Face.
