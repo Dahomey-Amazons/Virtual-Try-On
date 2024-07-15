@@ -25,6 +25,7 @@ Users choose accessories/clothes from their wishlist on Myntra. OpenCV technolog
 
 #### Step 3
 Users can adjust how accessories look and decide which ones they like. They can add their favorites to the cart directly.
+
 ![Demo](Gallery-Photos/images/demo1.png)
 
 ### 2. For Photo from Gallery
