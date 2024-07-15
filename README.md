@@ -16,46 +16,53 @@ Brands incorporating VTO stand out in the competitive market, appealing especial
 
 ## How It Works
 
-### Step 1
+### 1. For Live Camera
+#### Step 1
 Ask users to use their phone camera to scan their face or full body from a distance in good lighting conditions on the Myntra app.
 
-### Step 2
-Users choose accessories/clothes from their wishlist on Myntra. AR technology adds the chosen accessories (like sunglasses or hats) to their live camera view.
+#### Step 2
+Users choose accessories/clothes from their wishlist on Myntra. OpenCV technology adds the chosen accessories (like sunglasses or hats) to their live camera view.
 
-### Step 3
+#### Step 3
+Users can adjust how accessories look and decide which ones they like. They can add their favorites to the cart directly.
+![Demo](Gallery-Photos/images/demo1.png)
+
+### 2. For Photo from Gallery
+#### Step 1
+Ask users to select a photo in good lighting condition from their gallery.
+
+#### Step 2
+Users choose accessories/clothes from their wishlist on Myntra. The chosen accessories (like sunglasses or hats) to their photo.
+
+#### Step 3
 Users can adjust how accessories look and decide which ones they like. They can add their favorites to the cart directly.
 
-![Demo](Gallery-Photos/images/demo.png)
+![Demo](Gallery-Photos/images/demo2.png)
 
-## Model Checkpoints
-Our model checkpoints are trained on VITON-HD (half-body) and Dress Code (full-body). Checkpoints are available on 🤗 Hugging Face.
+## Installation For Photo Gallery
 
-- [ootd](https://huggingface.co/levihsu/OOTDiffusion)
-- [humanparsing](https://huggingface.co/levihsu/humanparsing)
-- [openpose](https://huggingface.co/levihsu/openpose)
-
-## Installation
 1. Clone the repository
 
 ```sh
-git clone https://github.com/levihsu/OOTDiffusion
+git clone https://github.com/Dahomey-Amazons/Virtual-Try-On.git
 ```
 
 2. Create a conda environment and install the required packages
 
 ```sh
-conda create -n ootd python==3.10
-conda activate ootd
+conda create -n myenv python==3.10
+conda activate myenv
 pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 pip install -r requirements.txt
 ```
+3. Please also download clip-vit-large-patch14 into checkpoints folder
 
 ## Inference
 1. Half-body model
 
 ```sh
-cd OOTDiffusion/run
-python run_ootd.py --model_path <model-image-path> --cloth_path <cloth-image-path> --scale 2.0 --sample 4
+cd Gallery-Photos/run
+python run_ootd.py --model_path <model-image-path> --cloth_path <cloth-image-path> --scale 2.0 --sample 1
 ```
 
 2. Full-body model 
@@ -63,6 +70,24 @@ python run_ootd.py --model_path <model-image-path> --cloth_path <cloth-image-pat
 > Garment category must be paired: 0 = upperbody; 1 = lowerbody; 2 = dress
 
 ```sh
-cd OOTDiffusion/run
-python run_ootd.py --model_path <model-image-path> --cloth_path <cloth-image-path> --model_type dc --category 2 --scale 2.0 --sample 4
+cd Gallery-Photos/run
+python run_ootd.py --model_path <model-image-path> --cloth_path <cloth-image-path> --model_type dc --category 2 --scale 2.0 --sample 1
 ```
+
+## Installation For Live Camera
+
+1. Clone the repository
+
+```sh
+git clone https://github.com/Dahomey-Amazons/Virtual-Try-On.git
+```
+
+2. Create a conda environment and install the required packages
+
+```sh
+conda create -n myenv python==3.10
+conda activate myenv
+pip install cv2 cvzone os
+```
+
+3. Change folder paths in main.py. Run main.py.
